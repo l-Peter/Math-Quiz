@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Question</title>
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+	<center>
+		<img height="150" id="change" name="change" src="images/img21.jpg" width="150">
+		<p>What is 126+76?</p>
+		<!-- if enter is pressed answer is submitted  -->
+		<form id="find" name="valueExample" onkeypress="Javascript: if (event.keyCode==13) question1();">
+			<input id="answerbox" name="answerbox" size="20" type="text"> 
+			<input class="button2" onclick="question1()" type="button" value="Submit">
+		</form>
+		<br>
+		<a class="button1" href="question2.html" id="nextquestion">Skip</a>
+	</center>
+	<script>
+	<!-- sets focus to answerbox -->
+	document.getElementById("answerbox").focus();
+	<!-- preloads images -->
+	img1 = new Image;
+	img1.src = "images/img1.jpg"
+	img2 = new Image;
+	img2.src = "images/img2.jpg"
+	img3 = new Image;
+	img3.src = "images/img3.jpg"
+	img4 = new Image;
+	img4.src = "images/img4.jpg"
+	img5 = new Image;
+	img5.src = "images/img5.jpg"
+	img6 = new Image;
+	img6.src = "images/img6.jpg"
+	img7 = new Image;
+	img7.src = "images/img7.jpg"
+	img8 = new Image;
+	img8.src = "images/img8.jpg"
+	img9 = new Image;
+	img9.src = "images/img9.jpg"
+	img10 = new Image;
+	img10.src = "images/img10.jpg"
+	img11 = new Image;
+	img11.src = "images/img11.jpg"
+	img12 = new Image;
+	img12.src = "images/img12.jpg"
+	img13 = new Image;
+	img13.src = "images/img13.jpg"
+	img14 = new Image;
+	img14.src = "images/img14.jpg"
+	img15 = new Image;
+	img15.src = "images/img15.jpg"
+	img16 = new Image;
+	img16.src = "images/img16.jpg"
+	img17 = new Image;
+	img17.src = "images/img17.jpg"
+	img18 = new Image;
+	img18.src = "images/img18.jpg"
+	img19 = new Image;
+	img19.src = "images/img19.jpg"
+	img20 = new Image;
+	img20.src = "images/img20.jpg"
+	counter = 1
+	newImgSrc = ""
+	<!-- changes the image -->
+	function change2() {
+		newImgSrc = "images/img" + counter + ".jpg"
+		document.images["change"].src = newImgSrc
+		counter += 1
+		if (counter == 21) {
+			counter = 1
+		}
+	}
+	<!-- does change2() every 1 second -->
+	var refresh2 = setInterval('change2()', 1000);
+
+	function question1() {
+		var x = document.valueExample.answerbox.value;
+		<!-- if the answer is correct does all of the following -->
+		if (x == 202) {
+			<!-- sets y to 1 -->
+			var y = parseInt(1)
+			<!-- changes the html -->
+			document.getElementById("find").innerHTML = "You got the correct answer!";
+			<!-- clears both intervals -->
+			clearInterval(refresh)
+			clearInterval(refresh2)
+			<!-- stores the new value -->
+			localStorage.setItem("value", y);
+			<!-- changes the image -->
+			newImgSrc = "images/img23.jpg"
+			document.images["change"].src = newImgSrc
+			<!-- changes the html -->
+			document.getElementById("nextquestion").innerHTML = "Click for question two";
+		}
+		<!-- otherwise does all of the following -->
+		else {
+			<!-- sets y to 0 -->
+			var y = parseInt(0)
+			<!-- clears both intervals -->
+			clearInterval(refresh)
+			clearInterval(refresh2)
+			<!-- changes the html -->
+			document.getElementById("find").innerHTML = "Wrong, the correct answer was 202. Please refer to page 126 in your textbook for more information on the subject.";
+			<!-- stores the new value -->
+			localStorage.setItem("value", y);
+			<!-- changes the image -->
+			newImgSrc = "images/img24.jpg"
+			document.images["change"].src = newImgSrc
+			<!-- changes the html -->
+			document.getElementById("nextquestion").innerHTML = "Click for question two";
+		}
+	}
+	<!-- at 20 seconds this function is called on to change the html and stop both intervals -->
+	function change() {
+		document.getElementById("find").innerHTML = "Too late! Go onto the next question.";
+		clearInterval(refresh)
+		clearInterval(refresh2)
+		document.getElementById("nextquestion").innerHTML = "Click for question two";
+	}
+	var refresh = setInterval('change()', 20001);
+	</script>
+</body>
+</html>

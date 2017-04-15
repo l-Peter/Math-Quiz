@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+	<link href="styles2.css" rel="stylesheet">
+</head>
+<body>
+	<center>
+		<img alt="math quiz" src="images/math.jpg">
+		<hr>
+		<div id="scores">
+			<p id="score"></p>
+		</div>
+		<a class="button1" href="question1.html">Try again</a>
+	</center>
+	<script>
+	var z = localStorage.getItem("value");
+	var y = parseInt(z);
+	var h = parseInt((y / 10) * 100);
+	<!-- gives score in /10 and in percent -->
+	document.getElementById("score").innerHTML = "You got " + y + "/10 correct. <br>Putting you at " + h + "%.";
+	<!-- resets score incase test is restarted and all questions are skipped -->
+	localStorage.setItem("value", 0);
+	</script>
+</body>
+</html>
