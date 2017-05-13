@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Results</title>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<title>Results Page</title>
 	<link href="css/styles2.css" rel="stylesheet">
 </head>
 <body>
-	<center>
-		<img alt="math quiz" src="images/math.jpg">
-		<hr>
-		<div id="scores">
-			<p id="score"></p>
-		</div>
-		<a class="button1" href="question1.html">Try again</a>
-	</center>
+	<div id="logo">
+		<center>
+			<img alt="math quiz" src="images/math.jpg">
+		</center>
+	</div>
+	<ul id="nav">
+		<li>
+			<a href="index.html">Home</a>
+		</li>
+		<!-- target="_blank" is used to make the page open in a new tab -->
+		<li>
+			<a href="https://my.hrw.com/content/hmof/math/gomath/ca/gr8/ese_9780544248502_/index1.html" target="_blank">Textbook</a>
+		</li>
+		<li>
+			<a href="about.html">About</a>
+		</li>
+	</ul>
+	<div id="info">
+		<center>
+			<div id="scores">
+				<p id="score"></p>
+			</div>
+			<div id="buttons">
+				<a class="button1" href="question1.html">Try again</a>
+			</div>
+		</center>
+	</div>
+	<div id="footer">
+		<p>Copyright &copy; 2017 &bull; All rights reserved</p>
+		<p>Website design and development by Peter Barsoum</p>
+	</div>
 	<script>
-	var z = localStorage.getItem("value");
-	var y = parseInt(z);
-	var h = parseInt((y / 10) * 100);
-	<!-- gives score in /10 and in percent -->
-	document.getElementById("score").innerHTML = "You got " + y + "/10 correct. <br>Putting you at " + h + "%.";
-	<!-- resets score incase test is restarted and all questions are skipped -->
-	localStorage.setItem("value", 0);
+	   var z = localStorage.getItem("value");
+	   var y = parseInt(z);
+	   var h = parseInt((y / 10) * 100);
+	   <!-- gives score in /10 and in percent -->
+	   document.getElementById("score").innerHTML = "You got " + y + "/10 correct. <br>Putting you at " + h + "%.";
+	   <!-- resets score incase test is restarted and all questions are skipped -->
+	   localStorage.setItem("value", 0);
 	</script>
 </body>
 </html>

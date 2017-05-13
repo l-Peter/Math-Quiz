@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<title>Tenth Question</title>
 	<link href="css/styles.css" rel="stylesheet">
 </head>
@@ -10,82 +12,80 @@
 		<p>What is 56*7?</p>
 		<!-- if enter is pressed answer is submitted  -->
 		<form id="find" name="valueExample" onkeypress="Javascript: if (event.keyCode==13) question10();">
-			<input id="answerbox" name="answerbox" size="20" type="text"> 
-			<input class="button2" onclick="question10()" type="button" value="Submit">
-		</form>
-		<br>
+			<input id="answerbox" name="answerbox" size="20" type="text"> <input class="button2" onclick="question10()" type="button" value="Submit">
+		</form><br>
 		<a class="button1" href="results.html">Click to see your results</a>
 	</center>
 	<script>
-	<!-- sets focus to answerbox -->
-	document.getElementById("answerbox").focus();
-	<!-- preloads images -->
-		for (i = 1; i < 21; i++) {
-		imgi = new Image;
-		imgi.src = "images/img" + i + ".jpg"
-}
-	counter = 1
-	newImgSrc = ""
-	<!-- changes the image -->
-	function change2() {
-		newImgSrc = "images/img" + counter + ".jpg"
-		document.images["change"].src = newImgSrc
-		counter += 1
-		if (counter == 21) {
-			counter = 1
-		}
+	   <!-- sets focus to answerbox -->
+	   document.getElementById("answerbox").focus();
+	   <!-- preloads images -->
+	       for (i = 1; i < 21; i++) {
+	       imgi = new Image;
+	       imgi.src = "images/img" + i + ".jpg"
 	}
-	<!-- does change2() every 1 second -->
-	var refresh2 = setInterval('change2()', 1000);
+	   counter = 1
+	   newImgSrc = ""
+	   <!-- changes the image -->
+	   function change2() {
+	       newImgSrc = "images/img" + counter + ".jpg"
+	       document.images["change"].src = newImgSrc
+	       counter += 1
+	       if (counter == 21) {
+	           counter = 1
+	       }
+	   }
+	   <!-- does change2() every 1 second -->
+	   var refresh2 = setInterval('change2()', 1000);
 
-	function question10() {
-		var x = document.valueExample.answerbox.value;
-		<!-- if the answer is correct does all of the following -->
-		if (x == 392) {
-			<!-- gets the stored value -->
-			var z = localStorage.getItem("value");
-			<!-- turns the string into a number so we can do math with it -->
-			var y = parseInt(z);
-			<!-- adds 1 to the value -->
-			y = parseInt(1 + y)
-			<!-- clears both intervals -->
-			clearInterval(refresh)
-			clearInterval(refresh2)
-			<!-- changes the html -->
-			document.getElementById("find").innerHTML = "You got the correct answer!";
-			<!-- stores the new value -->
-			localStorage.setItem("value", y);
-			<!-- changes the image -->
-			newImgSrc = "images/img23.jpg"
-			document.images["change"].src = newImgSrc
-		}
-		<!-- otherwise does all of the following -->
-		else {
-			<!-- gets the stored value -->
-			var z = localStorage.getItem("value");
-			<!-- turns the string into a number so we can do math with it -->
-			var y = parseInt(z);
-			<!-- adds 0 to the value (doesn't change the value)-->
-			y = parseInt(0 + y)
-			<!-- clears both intervals -->
-			clearInterval(refresh)
-			clearInterval(refresh2)
-			<!-- changes the html -->
-			document.getElementById("find").innerHTML = "Wrong, the correct answer was 199. Please refer to page 159 in your textbook for more information on the subject.";
-			<!-- stores the new value -->
-			localStorage.setItem("value", y);
-			<!-- changes the image -->
-			newImgSrc = "images/img24.jpg"
-			document.images["change"].src = newImgSrc
-		}
-	}
-	<!-- at 20 seconds this function is called on to change the html and stop both intervals -->
-	function change() {
-		document.getElementById("find").innerHTML = "Too late! Go onto the next question.";
-		clearInterval(refresh)
-		clearInterval(refresh2)
-	}
-	var refresh = setInterval('change()', 20001);
+	   function question10() {
+	       var x = document.valueExample.answerbox.value;
+	       <!-- if the answer is correct does all of the following -->
+	       if (x == 392) {
+	           <!-- gets the stored value -->
+	           var z = localStorage.getItem("value");
+	           <!-- turns the string into a number so we can do math with it -->
+	           var y = parseInt(z);
+	           <!-- adds 1 to the value -->
+	           y = parseInt(1 + y)
+	           <!-- clears both intervals -->
+	           clearInterval(refresh)
+	           clearInterval(refresh2)
+	           <!-- changes the html -->
+	           document.getElementById("find").innerHTML = "You got the correct answer!";
+	           <!-- stores the new value -->
+	           localStorage.setItem("value", y);
+	           <!-- changes the image -->
+	           newImgSrc = "images/img23.jpg"
+	           document.images["change"].src = newImgSrc
+	       }
+	       <!-- otherwise does all of the following -->
+	       else {
+	           <!-- gets the stored value -->
+	           var z = localStorage.getItem("value");
+	           <!-- turns the string into a number so we can do math with it -->
+	           var y = parseInt(z);
+	           <!-- adds 0 to the value (doesn't change the value)-->
+	           y = parseInt(0 + y)
+	           <!-- clears both intervals -->
+	           clearInterval(refresh)
+	           clearInterval(refresh2)
+	           <!-- changes the html -->
+	           document.getElementById("find").innerHTML = "Wrong, the correct answer was 392. Please refer to page 159 in your textbook for more information on the subject.";
+	           <!-- stores the new value -->
+	           localStorage.setItem("value", y);
+	           <!-- changes the image -->
+	           newImgSrc = "images/img24.jpg"
+	           document.images["change"].src = newImgSrc
+	       }
+	   }
+	   <!-- at 20 seconds this function is called on to change the html and stop both intervals -->
+	   function change() {
+	       document.getElementById("find").innerHTML = "Too late! Go onto the next question.";
+	       clearInterval(refresh)
+	       clearInterval(refresh2)
+	   }
+	   var refresh = setInterval('change()', 20001);
 	</script>
 </body>
 </html>

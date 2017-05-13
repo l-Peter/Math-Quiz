@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<title>First Question</title>
 	<link href="css/styles.css" rel="stylesheet">
 </head>
@@ -10,79 +12,77 @@
 		<p>What is 126+76?</p>
 		<!-- if enter is pressed answer is submitted  -->
 		<form id="find" name="valueExample" onkeypress="Javascript: if (event.keyCode==13) question1();">
-			<input id="answerbox" name="answerbox" size="20" type="text"> 
-			<input class="button2" onclick="question1()" type="button" value="Submit">
-		</form>
-		<br>
+			<input id="answerbox" name="answerbox" size="20" type="text"> <input class="button2" onclick="question1()" type="button" value="Submit">
+		</form><br>
 		<a class="button1" href="question2.html" id="nextquestion">Skip</a>
 	</center>
 	<script>
-	<!-- sets focus to answerbox -->
-	document.getElementById("answerbox").focus();
-	<!-- preloads images -->
-		for (i = 1; i < 21; i++) {
-		imgi = new Image;
-		imgi.src = "images/img" + i + ".jpg"
-}
-	counter = 1
-	newImgSrc = ""
-	<!-- changes the image -->
-	function change2() {
-		newImgSrc = "images/img" + counter + ".jpg"
-		document.images["change"].src = newImgSrc
-		counter += 1
-		if (counter == 21) {
-			counter = 1
-		}
+	   <!-- sets focus to answerbox -->
+	   document.getElementById("answerbox").focus();
+	   <!-- preloads images -->
+	       for (i = 1; i < 21; i++) {
+	       imgi = new Image;
+	       imgi.src = "images/img" + i + ".jpg"
 	}
-	<!-- does change2() every 1 second -->
-	var refresh2 = setInterval('change2()', 1000);
+	   counter = 1
+	   newImgSrc = ""
+	   <!-- changes the image -->
+	   function change2() {
+	       newImgSrc = "images/img" + counter + ".jpg"
+	       document.images["change"].src = newImgSrc
+	       counter += 1
+	       if (counter == 21) {
+	           counter = 1
+	       }
+	   }
+	   <!-- does change2() every 1 second -->
+	   var refresh2 = setInterval('change2()', 1000);
 
-	function question1() {
-		var x = document.valueExample.answerbox.value;
-		<!-- if the answer is correct does all of the following -->
-		if (x == 202) {
-			<!-- sets y to 1 -->
-			var y = parseInt(1)
-			<!-- changes the html -->
-			document.getElementById("find").innerHTML = "You got the correct answer!";
-			<!-- clears both intervals -->
-			clearInterval(refresh)
-			clearInterval(refresh2)
-			<!-- stores the new value -->
-			localStorage.setItem("value", y);
-			<!-- changes the image -->
-			newImgSrc = "images/img23.jpg"
-			document.images["change"].src = newImgSrc
-			<!-- changes the html -->
-			document.getElementById("nextquestion").innerHTML = "Click for question two";
-		}
-		<!-- otherwise does all of the following -->
-		else {
-			<!-- sets y to 0 -->
-			var y = parseInt(0)
-			<!-- clears both intervals -->
-			clearInterval(refresh)
-			clearInterval(refresh2)
-			<!-- changes the html -->
-			document.getElementById("find").innerHTML = "Wrong, the correct answer was 202. Please refer to page 126 in your textbook for more information on the subject.";
-			<!-- stores the new value -->
-			localStorage.setItem("value", y);
-			<!-- changes the image -->
-			newImgSrc = "images/img24.jpg"
-			document.images["change"].src = newImgSrc
-			<!-- changes the html -->
-			document.getElementById("nextquestion").innerHTML = "Click for question two";
-		}
-	}
-	<!-- at 20 seconds this function is called on to change the html and stop both intervals -->
-	function change() {
-		document.getElementById("find").innerHTML = "Too late! Go onto the next question.";
-		clearInterval(refresh)
-		clearInterval(refresh2)
-		document.getElementById("nextquestion").innerHTML = "Click for question two";
-	}
-	var refresh = setInterval('change()', 20001);
+	   function question1() {
+	       var x = document.valueExample.answerbox.value;
+	       <!-- if the answer is correct does all of the following -->
+	       if (x == 202) {
+	           <!-- sets y to 1 -->
+	           var y = parseInt(1)
+	           <!-- changes the html -->
+	           document.getElementById("find").innerHTML = "You got the correct answer!";
+	           <!-- clears both intervals -->
+	           clearInterval(refresh)
+	           clearInterval(refresh2)
+	           <!-- stores the new value -->
+	           localStorage.setItem("value", y);
+	           <!-- changes the image -->
+	           newImgSrc = "images/img23.jpg"
+	           document.images["change"].src = newImgSrc
+	           <!-- changes the html -->
+	           document.getElementById("nextquestion").innerHTML = "Click for question two";
+	       }
+	       <!-- otherwise does all of the following -->
+	       else {
+	           <!-- sets y to 0 -->
+	           var y = parseInt(0)
+	           <!-- clears both intervals -->
+	           clearInterval(refresh)
+	           clearInterval(refresh2)
+	           <!-- changes the html -->
+	           document.getElementById("find").innerHTML = "Wrong, the correct answer was 202. Please refer to page 126 in your textbook for more information on the subject.";
+	           <!-- stores the new value -->
+	           localStorage.setItem("value", y);
+	           <!-- changes the image -->
+	           newImgSrc = "images/img24.jpg"
+	           document.images["change"].src = newImgSrc
+	           <!-- changes the html -->
+	           document.getElementById("nextquestion").innerHTML = "Click for question two";
+	       }
+	   }
+	   <!-- at 20 seconds this function is called on to change the html and stop both intervals -->
+	   function change() {
+	       document.getElementById("find").innerHTML = "Too late! Go onto the next question.";
+	       clearInterval(refresh)
+	       clearInterval(refresh2)
+	       document.getElementById("nextquestion").innerHTML = "Click for question two";
+	   }
+	   var refresh = setInterval('change()', 20001);
 	</script>
 </body>
 </html>

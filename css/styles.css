@@ -1,28 +1,28 @@
 body {
-    background-color: black;
-    color: white;
+	background-color: black;
+	color: white;
 }
 .button1 {
-    cursor: pointer;
-    background-color: #00008B;
-    color: white;
-    display: inline-block;
-    padding: 8px 14px 9px;
-    text-decoration: none;
-    font-family: "Verdana", Sans-serif;
+	cursor: pointer;
+	background-color: #00008B;
+	color: white;
+	display: inline-block;
+	padding: 8px 14px 9px;
+	text-decoration: none;
+	font-family: Verdana, Sans-serif;
 }
 .button1:hover {
-    background-color: #0000FF;
+	background-color: #0000FF;
 }
 .button2 {
-    cursor: pointer;
-    background-color: green;
-    color: white;
-    display: inline-block;
-    padding: 4px 14px 5px;
-    text-decoration: none;
-    font-family: "Verdana", Sans-serif;
+	cursor: pointer;
+	background-color: green;
+	color: white;
+	display: inline-block;
+	padding: 4px 14px 5px;
+	text-decoration: none;
+	font-family: Verdana, Sans-serif;
 }
 .button2:hover {
-    background-color: #3e8e41;
+	background-color: #3e8e41;
 }
